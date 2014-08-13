@@ -12,8 +12,8 @@ Numerical solutions for transient heat conduction in a solid sphere or cylinder.
 Lumped capacitance method for transient conduction.
 
 ## functions
-Function files for developed from the numerical and lumped capacitance methods. These can be imported 
-into existing models.
+Function files developed from the numerical and lumped capacitance methods. These can be imported 
+into existing models. Each function is named in 'lowercase' while examples of using the function start with an 'uppercase'.
 
 # License
 trans_heat_cond is available under the MIT license. See the LICENSE file for more info.
