@@ -15,7 +15,7 @@ c = 1500    # specific heat, J/kg*K
 k = 0.20    # thermal conductivity, W/m*K
 rho = 700   # density, kg/m^3
 
-d = 350e-6  # particle diameter, m (e-6 for microns)
+d = 500e-6                  # particle diameter, m (e-6 for microns)
 H = 2/3*d                   # cylinder height of equal volume
 a = ((np.pi*d**3)/6)**(1/3) # cube side of equal volume
 
@@ -72,7 +72,7 @@ Fo_sph = (alpha*t)/(Lsph**2)
 Fo_cyl = (alpha*t)/(Lcyl**2)
 Fo_cube = (alpha*t)/(Lcube**2)
 
-# dimensionless temperature
+# dimensionless temperature ratio
 phi_sph = np.exp(-Bi_sph*Fo_sph)
 phi_cyl = np.exp(-Bi_cyl*Fo_cyl)
 phi_cube = np.exp(-Bi_cube*Fo_cube)
@@ -82,27 +82,33 @@ T_sph = Tinf+(Ti-Tinf)*phi_sph
 T_cyl = Tinf+(Ti-Tinf)*phi_cyl
 T_cube = Tinf+(Ti-Tinf)*phi_cube
 
+# print volume and surface area
+print('--- Volume ---')
+print('Vsph = {:.4g}, Vcyl = {:.4g}, Vcube = {:.4g}'.format(Vsph, Vcyl, Vcube))
+print('--- Surface Area ---')
+print('Asph = {:.4g}, Acyl = {:.4g}, Acube = {:.4g}'.format(Asph, Acyl, Acube))
+
 # Plot Results
 # -----------------------------------------------------------------------------
 
 py.figure(5)
-py.plot(t, phi_sph, label='sphere')
-py.plot(t, phi_cyl, label='cylinder')
-py.plot(t, phi_cube, label='cube')
-py.title('Dimensionless Temperature')
-py.ylabel(r'$\Theta^*$', rotation=0)
+py.plot(t, phi_sph, label='sphere', lw=2)
+py.plot(t, phi_cyl, label='cylinder', lw=2)
+py.plot(t, phi_cube, label='cube', lw=2)
+py.title('Dimensionless Temperature Ratio')
+py.ylabel(r'$\Theta^* = \Theta / \Theta i$')
 py.xlabel('t (s)')
 py.legend(loc='best', numpoints=1)
 py.grid()
 py.show()
 
 py.figure(6)
-py.plot(t, T_sph, label='sphere')
-py.plot(t, T_cyl, label='cylinder')
-py.plot(t, T_cube, label='cube')
+py.plot(t, T_sph, label='sphere', lw=2)
+py.plot(t, T_cyl, label='cylinder', lw=2)
+py.plot(t, T_cube, label='cube', lw=2)
 py.axhline(y=773, color='k', linestyle='--')
 py.title('Temperature')
-py.ylabel('T (K)', rotation=0)
+py.ylabel('T (K)')
 py.xlabel('t (s)')
 py.legend(loc='best', numpoints=1)
 py.grid()
