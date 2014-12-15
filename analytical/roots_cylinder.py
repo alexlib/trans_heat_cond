@@ -15,7 +15,7 @@ import matplotlib.pyplot as py
 for i in np.arange(0, 2.5, 0.1):
     j0 = sp.j0(i)
     j1 = sp.j1(i)
-    print('%.4f - %.4f - %.4f' % (i, j0, j1))
+    print('{:.4f} - {:.4f} - {:.4f}'.format(i, j0, j1))
 
 # range of roots
 step = 0.1
@@ -43,8 +43,10 @@ for i in z:
     k = k + 1
     s = s + 0.1
     if k < len(z) and fz[k-1] < 0 and fz[k] > 0:
-        root.append(opt.brentq(funcZeta, s-0.1, s))        
+        root.append(opt.brentq(funcZeta, s-0.1, s))
+        print('s\t', s)        
     elif k < len(z) and fz[k-1] > 0 and fz[k] < 0:
+        print('s\t', s)
         root.append(opt.brentq(funcZeta, s-0.1, s))
 
 print('roots \n', root)
