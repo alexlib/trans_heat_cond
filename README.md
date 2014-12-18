@@ -1,9 +1,9 @@
 # trans_heat_cond
 
-This repository contains models and functions to simulate the 1D transient heat conduction of wood particles at fast pyrolysis conditions. The code is organized into 4 groups (details below) based on the approach or method used. All files are written in Python 3 unless otherwise noted. Visit the [Python](https://www.python.org) website for information about the language. For an easy installation of Python 3, consider using the [Anaconda](http://www.continuum.io) distribution available for free from Continuum Analytics. Please read the comments in each file to fully understand the limitations and assumptions made for each example.
+Models and functions to simulate the 1D transient heat conduction of wood particles at fast pyrolysis conditions. The code is organized into 4 groups (details below) based on the approach or method used. All files are written in Python 3. For easy installation of Python 3, use the [Anaconda](http://www.continuum.io) distribution available for free from Continuum Analytics. Please read the comments in each file to fully understand the limitations and assumptions made for each example.
 
 ## analytical
-Analytical solutions for transient heat conduction in a solid sphere or cylinder.
+Analytical solutions for 1D transient heat conduction in a solid sphere, cylinder, or slab.
 
 ## numerical
 Numerical solutions for transient heat conduction in a solid sphere or cylinder.
