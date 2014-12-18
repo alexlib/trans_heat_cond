@@ -1,5 +1,5 @@
 """
-Example of using SciPy to determine bessel functions of the first kind
+Example of using SciPy for bessel functions of the first kind.
 
 References:
 Bergman, Lavine, Incropera, Dewitt 2011 from Ch. 5, pg.299-304, pg.1017

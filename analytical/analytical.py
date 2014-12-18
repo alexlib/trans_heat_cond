@@ -5,6 +5,7 @@ or slab with convection at the surface and no heat generation.
 References: 
 1) Recktenwald 2006
 2) Bergman, Lavine, Incropera, Dewitt 2011 from Ch. 5, pg.299-304
+3) Papadikis 2010a
 """
 
 # Modules
@@ -14,13 +15,13 @@ import numpy as np
 import matplotlib.pyplot as py
 from funcTheta import theta
 
-#py.close('all')
+py.close('all')
 
-# Parameters from Papadikis2010a Table 1
+# Parameters from Papadikis 2010a Table 1
 #------------------------------------------------------------------------------
 
 rhow = 700      # density of biomass, 700 kg/m3
-d = 0.035e-2    # particle diameter for 350um, m
+d = 0.035e-2    # particle diameter for 350 um size, m
 cpw = 1500      # specific heat capacity biomass, J/(kg K)
 kw = 0.105      # thermal conductivity biomass, W/(m K)
 Ti = 300        # uniform initial temp of sphere, K
