@@ -1,6 +1,7 @@
 """
-Analytical solution of 1D transient heat conduction in a solid sphere, cylinder,
-or slab with convection at the surface and no heat generation.
+Plot the analytical solutions of 1D transient heat conduction in a solid
+sphere, cylinder, and slab with convection at the surface and no heat
+generation within the solid.
 
 References: 
 1) Recktenwald 2006

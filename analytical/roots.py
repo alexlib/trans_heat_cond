@@ -1,6 +1,6 @@
 """
 Plot the zeta, Bi equation and its positive roots. For use in the analytical
-solution of a 1D sphere, cylinder, or slab transient heat conduction.
+transient heat conduction of a 1D sphere, cylinder, or slab.
 
 References: 
 1) Recktenwald 2006
