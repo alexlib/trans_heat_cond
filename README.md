@@ -9,7 +9,7 @@ Analytical solutions for 1D transient heat conduction in a solid sphere, cylinde
 Numerical solutions for 1D transient heat conduction in a solid sphere or cylinder.
 
 ### lumped
-Lumped capacitance method for 1d transient heat conduction.
+Lumped capacitance method for 1D transient heat conduction in a solid sphere, cylinder, and slab shape.
 
 #### License
 Code in this repository is available under the MIT license. See the LICENSE file for more information.
