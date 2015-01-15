@@ -1,6 +1,6 @@
 ## Analytical Approach for 1D Transient Heat Conduction
 
-The [Analytical Model](#) uses the analytical solution for 1D transient heat conduction in a solid sphere, cylinder, or slab shape with convection at the surface and no heat generation. Run the `analytical.py` file for plots of the temperature profiles at the center and surface of the wood particle.  
+The [Analytical Model](http://nbviewer.ipython.org/github/pyrolysis/trans_heat_cond/blob/master/analytical/analytical.ipynb) uses the analytical solution for 1D transient heat conduction in a solid sphere, cylinder, or slab shape with convection at the surface and no heat generation. Run the `analytical.py` file for plots of the temperature profiles at the center and surface of the wood particle.  
 
 Model - `analytical.py`  
 Functions - `funcTheta.py`, `funcRoots.py`, `funcZeta.py`  
