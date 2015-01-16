@@ -1,0 +1,12 @@
+<style>
+
+div.text_cell_render {
+    width: 800px;
+}
+
+div.text_cell_render p {
+    font-size: 12pt;
+    line-height: 18pt;
+}
+
+</style>
