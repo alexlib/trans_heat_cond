@@ -3,6 +3,15 @@ Plot the analytical solutions of 1D transient heat conduction in a solid
 sphere, cylinder, and slab with convection at the surface and no heat
 generation within the solid.
 
+Requirements:
+Python 3, NumPy, SciPy, and Matplotlib
+
+Functions:
+funcTheta.py returns theta (dimensionless temp) for sphere, cylinder, or slab
+funcRoots.py returns the positive roots of the zeta, Bi equation
+funcZeta.py functions for zeta, Bi equation for sphere, cylinder, and slab
+funcTheta <- funcRoots <- funcZeta
+
 References: 
 1) Recktenwald 2006
 2) Bergman, Lavine, Incropera, Dewitt 2011 from Ch. 5, pg.299-304
@@ -104,7 +113,7 @@ py.ylabel('Temperature (K)')
 py.xlabel('Time (s)')
 py.ylim(ylimRange)
 py.xlim([0, tmax])
-py.axhline(y=Th, color='k', linestyle='--')
+py.axhline(y=Th, color='k', linestyle='--', label=r'T$_\infty$')
 py.rcParams['xtick.major.pad'] = 6
 py.rcParams['ytick.major.pad'] = 6
 py.legend(loc='best', numpoints=1)
@@ -119,7 +128,7 @@ py.ylabel('Temperature (K)')
 py.xlabel('Time (s)')
 py.ylim(ylimRange)
 py.xlim([0, tmax])
-py.axhline(y=Th, color='k', linestyle='--')
+py.axhline(y=Th, color='k', linestyle='--', label=r'T$_\infty$')
 py.rcParams['xtick.major.pad'] = 6
 py.rcParams['ytick.major.pad'] = 6
 py.legend(loc='best', numpoints=1)
@@ -134,7 +143,7 @@ py.ylabel('Temperature (K)')
 py.xlabel('Time (s)')
 py.ylim(ylimRange)
 py.xlim([0, tmax])
-py.axhline(y=Th, color='k', linestyle='--')
+py.axhline(y=Th, color='k', linestyle='--', label=r'T$_\infty$')
 py.rcParams['xtick.major.pad'] = 6
 py.rcParams['ytick.major.pad'] = 6
 py.legend(loc='best', numpoints=1)
