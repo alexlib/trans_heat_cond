@@ -16,5 +16,10 @@ Numerical Model - numerical solutions for 1D transient heat conduction in a soli
 ### lumped
 Lumped Model - lumped capacitance method for 1D transient heat conduction in a solid sphere, cylinder, and slab shape.
 
+### References
+* Bergman, T.L. et al., 2011. Fundamentals of Heat and Mass Transfer 7th ed., John Wiley and Sons, Inc.
+* Recktenwald, G., 2006. Transient One-Dimensional Heat Conduction in a Convectively Cooled Sphere, pp.1–13.
+* Papadikis, K., Gu, S. and Bridgwater, A.V., 2010. Computational modelling of the impact of particle size to the heat transfer coefficient between biomass particles and a fluidised bed. Fuel Processing Technology, 91(1), pp.68–79.
+
 ### License
 Code in this repository is available under the MIT license. See the LICENSE file for more information.
