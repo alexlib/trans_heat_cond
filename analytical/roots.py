@@ -2,16 +2,21 @@
 Plot the zeta, Bi equation and its positive roots. For use in the analytical
 transient heat conduction of a 1D sphere, cylinder, or slab.
 
+Functions:
+funcRoots.py returns the positive roots of the zeta, Bi equation
+funcZeta.py functions for zeta, Bi equation for sphere, cylinder, and slab
+
 References: 
 1) Recktenwald 2006
 2) Bergman, Lavine, Incropera, Dewitt 2011 from Ch. 5, pg.299-304
 """
 
-# Modules and Required Functions
+# Modules and Functions
 #------------------------------------------------------------------------------
  
 import numpy as np
 import matplotlib.pyplot as py
+
 from funcRoots import roots
 from funcZeta import funcZetaSph, funcZetaCyl, funcZetaSlab
 
@@ -56,7 +61,7 @@ print('roots of slab zeta, Bi equation \n', rts_slab)
 
 fz_slab = funcZetaSlab(z, Bi) # evaluate zeta, Bi slab equation at z-values
 
-# Plot Function and its Positive Roots
+# Plot Each Function and its Positive Roots
 #------------------------------------------------------------------------------
     
 py.figure(1)
@@ -65,7 +70,7 @@ py.scatter(rts_sph, np.zeros(len(rts_sph)), c='r', s=60, edgecolor='none')
 py.axhline(y=0, c='k', ls='--')
 py.ylabel('f ($\zeta$)')
 py.xlabel('$\zeta$')
-py.title('Sphere')
+py.title('Sphere at Bi={}'.format(Bi))
 py.ylim([-20, 20])
 py.xlim(0)
 py.grid()
@@ -77,7 +82,7 @@ py.scatter(rts_cyl, np.zeros(len(rts_cyl)), c='r', s=60, edgecolor='none')
 py.axhline(y=0, c='k', ls='--')
 py.ylabel('f ($\zeta$)')
 py.xlabel('$\zeta$')
-py.title('Cylinder')
+py.title('Cylinder at Bi={}'.format(Bi))
 py.ylim([-20, 20])
 py.xlim(0)
 py.grid()
@@ -89,7 +94,7 @@ py.scatter(rts_slab, np.zeros(len(rts_slab)), c='r', s=60, edgecolor='none')
 py.axhline(y=0, c='k', ls='--')
 py.ylabel('f ($\zeta$)')
 py.xlabel('$\zeta$')
-py.title('Slab')
+py.title('Slab at Bi={}'.format(Bi))
 py.ylim([-20, 20])
 py.xlim(0)
 py.grid()
