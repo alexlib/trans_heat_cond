@@ -1,6 +1,13 @@
-# Lumped Capacitance Model comparing sphere, cylinder, cube shapes
-# uses sphere diameter to determine cylinder and cube of same volume as sphere
-# Incropera2011, Ch.5 Transient Conduction, pg.280-286
+"""
+Lumped capacitance method comparing solid sphere, cylinder, cube shapes.
+Uses sphere diameter to determine cylinder and cube of same volume as sphere.
+
+Reference:
+Bergman, Lavine, Incropera, Dewitt 2011, Ch. 5, pg. 280-286
+"""
+
+# Modules
+# -----------------------------------------------------------------------------
 
 import numpy as np
 import matplotlib.pyplot as py
@@ -16,8 +23,8 @@ k = 0.20    # thermal conductivity, W/m*K
 rho = 700   # density, kg/m^3
 
 d = 500e-6                  # particle diameter, m (e-6 for microns)
-H = 2/3*d                   # cylinder height of equal volume
-a = ((np.pi*d**3)/6)**(1/3) # cube side of equal volume
+H = 2/3*d                   # cylinder height of equal volume, m
+a = ((np.pi*d**3)/6)**(1/3) # cube side of equal volume, m
 
 Ti = 300    # initial temperature, K
 Tinf = 773  # ambient temperature, K
@@ -91,18 +98,18 @@ print('Asph = {:.4g}, Acyl = {:.4g}, Acube = {:.4g}'.format(Asph, Acyl, Acube))
 # Plot Results
 # -----------------------------------------------------------------------------
 
-py.figure(5)
+py.figure(3)
 py.plot(t, phi_sph, label='sphere', lw=2)
 py.plot(t, phi_cyl, label='cylinder', lw=2)
 py.plot(t, phi_cube, label='cube', lw=2)
 py.title('Dimensionless Temperature Ratio')
-py.ylabel(r'$\Theta^* = \Theta / \Theta i$')
+py.ylabel(r'$\Theta / \Theta i$')
 py.xlabel('t (s)')
 py.legend(loc='best', numpoints=1)
 py.grid()
 py.show()
 
-py.figure(6)
+py.figure(4)
 py.plot(t, T_sph, label='sphere', lw=2)
 py.plot(t, T_cyl, label='cylinder', lw=2)
 py.plot(t, T_cube, label='cube', lw=2)

@@ -1,5 +1,12 @@
-# Lumped Capacitance Model for Sphere
-# Incropera2011, Ch.5 Transient Conduction, pg.280-286
+"""
+Lumped capacitance method for solid sphere using Biot and Fourier numbers.
+
+Reference:
+Bergman, Lavine, Incropera, Dewitt 2011, Ch. 5, pg. 280-286
+"""
+ 
+# Modules
+# -----------------------------------------------------------------------------
 
 import numpy as np
 import matplotlib.pyplot as py
@@ -26,35 +33,42 @@ t = np.linspace(0, 3)   # time range, s
 A = np.pi*(d**2)        # surface area sphere pi*D^2, m^2
 V = np.pi*(d**3)/6      # volume of sphere pi*D^3/6, m^3
 
-tm = (h*A)/(rho*V*c)    # term 1
-phi = np.exp(-tm*t)     # dimensionless temperature Eq 5.6
-
 tau = (rho*V*c)/(h*A)   # thermal time constant Eq 5.7, s
-print('tau = ', tau)
 
-T = Tinf+(Ti-Tinf)*phi  # temperature at some time, K
+Lc = V/A                # characteristic length for sphere, m
+Bi = (h*Lc)/k           # Biot number Eq 5.10, (-)
 
-Lc = d/6        # characteristic length, for sphere = d/6 or r/3
-Bi = h*Lc/k     # Biot number Eq 5.10
-print('Bi = ', Bi)
+alpha = k/(rho*c)       # thermal diffusivity, m^2/s
+Fo = (alpha*t)/(Lc**2)  # Fourier number Eq 5.12, (-)
+
+phi = np.exp(-Bi*Fo)    # dimensionless temperature Eq. 5.13, (-)
+T = Tinf+(Ti-Tinf)*phi  # temperature, K
 
 # time for solid to reach some temperature Eq 5.5, s
 ts = tau*np.log((Ti-Tinf)/(772-Tinf))
-print('ts = ', ts)
-print('-'*20)
 
-# plot results
+# Print Results
+# -----------------------------------------------------------------------------
+
+print('tau (s) = ', tau)
+print('Bi (-) = ', Bi)
+print('ts (s) = ', ts)
+
+# Plot Results
+# -----------------------------------------------------------------------------
+
 py.figure(1)
-py.plot(t, phi)
+py.plot(t, phi, lw=2)
 py.title('Sphere')
-py.ylabel(r'$\Theta$ / $\Theta_i$')
+py.ylabel(r'$\Theta$ / $\Theta_i$ (-)')
 py.xlabel('t (s)')
 py.grid()
 py.show()
 
 py.figure(2)
-py.plot(t, T)
+py.plot(t, T, lw=2)
 py.axhline(y=773, color='k', linestyle='--')
+py.ylim(200,800)
 py.title('Sphere')
 py.ylabel('T (K)')
 py.xlabel('t (s)')

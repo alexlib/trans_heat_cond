@@ -1,11 +1,18 @@
-# Lumped Capacitance Model for different shapes applied to Churchill correlation
-# Incropera2011, Ch.5 Transient Conduction, pg.280-286
-# Churchill1974
+"""
+Lumped capacitance method for different shapes applied to Churchill correlation
+
+References:
+1) Bergman, Lavine, Incropera, Dewitt 2011, Ch. 5, pg. 280-286
+2) Churchill 1974
+"""
+
+# Modules
+# -----------------------------------------------------------------------------
 
 import numpy as np
 import matplotlib.pyplot as py
 
-#py.close('all')
+py.close('all')
 
 # Parameters
 # -----------------------------------------------------------------------------
