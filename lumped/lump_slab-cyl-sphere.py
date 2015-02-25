@@ -2,6 +2,9 @@
 Lumped capacitance method comparing solid sphere, cylinder, cube shapes.
 Uses sphere diameter to determine cylinder and cube of same volume as sphere.
 
+Requirements:
+Python 3, NumPy, and Matplotlib
+
 Reference:
 Bergman, Lavine, Incropera, Dewitt 2011, Ch. 5, pg. 280-286
 """

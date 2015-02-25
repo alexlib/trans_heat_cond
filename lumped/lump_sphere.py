@@ -1,6 +1,9 @@
 """
 Lumped capacitance method for solid sphere using Biot and Fourier numbers.
 
+Requirements:
+Python 3, NumPy, and Matplotlib
+
 Reference:
 Bergman, Lavine, Incropera, Dewitt 2011, Ch. 5, pg. 280-286
 """
@@ -33,8 +36,6 @@ t = np.linspace(0, 3)   # time range, s
 A = np.pi*(d**2)        # surface area sphere pi*D^2, m^2
 V = np.pi*(d**3)/6      # volume of sphere pi*D^3/6, m^3
 
-tau = (rho*V*c)/(h*A)   # thermal time constant Eq 5.7, s
-
 Lc = V/A                # characteristic length for sphere, m
 Bi = (h*Lc)/k           # Biot number Eq 5.10, (-)
 
@@ -44,7 +45,8 @@ Fo = (alpha*t)/(Lc**2)  # Fourier number Eq 5.12, (-)
 phi = np.exp(-Bi*Fo)    # dimensionless temperature Eq. 5.13, (-)
 T = Tinf+(Ti-Tinf)*phi  # temperature, K
 
-# time for solid to reach some temperature Eq 5.5, s
+# time (ts) for solid to reach some temperature Eq 5.5, s
+tau = (rho*V*c)/(h*A)   # thermal time constant Eq 5.7, s
 ts = tau*np.log((Ti-Tinf)/(772-Tinf))
 
 # Print Results

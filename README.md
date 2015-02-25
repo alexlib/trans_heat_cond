@@ -14,7 +14,7 @@ The models and functions are written in Python 3 which is easily installed using
 Numerical Model - numerical solutions for 1D transient heat conduction in a solid sphere or cylinder.
 
 ### lumped
-Lumped Model - lumped capacitance method for 1D transient heat conduction in a solid sphere, cylinder, and slab shape.
+[Lumped Model](http://nbviewer.ipython.org/github/pyrolysis/trans_heat_cond/blob/master/lumped/lump_slab-cyl-sphere.ipynb) - lumped capacitance method for 1D transient heat conduction in a solid sphere, cylinder, and slab shape.
 
 ### References
 * Bergman, T.L. et al., 2011. Fundamentals of Heat and Mass Transfer 7th ed., John Wiley and Sons, Inc.
