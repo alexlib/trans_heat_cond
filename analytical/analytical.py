@@ -49,6 +49,7 @@ rc = 1e-12/ro                       # dimensionless center radius, (-)
 alpha = kw/(rhow*cpw)               # thermal diffusivity biomass, m^2/s
 t = np.arange(0, tmax+0.002, 0.002) # time range for simulation, s
 z = np.arange(0, 1250, 0.1)         # range to evaluate the zeta, Bi equation
+z[0] = 1e-12                        # prevent divide by zero warning
 
 Bi = (h*ro)/kw                      # Biot number, (-)
 Fo = (alpha * t) / (ro**2)          # Fourier number, (-)
